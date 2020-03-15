@@ -1,0 +1,465 @@
+@font-face {
+  font-family: "Recursive";
+  font-weight: 300 1000;
+  font-style: oblique 0deg 15deg;
+  src: url("fonts/Recursive_VF_1.043--subset-GF_latin_basic.woff2") format("woff2-variations");
+}
+
+/* Variabler */
+
+:root {
+  --whiteColor: #fff;
+  --baseColor: #32325d;
+  --colorTwo: #d3bcc0;
+  --colorThree: #9059ff;
+  --colorFour: #f2d7ee;
+  --colorSix: #f6f5f5;
+  --colorSeven: #f1bda5;
+
+  --scrollRatio: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font-family: "Recursive", Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: calc(2.5rem + 3vw);
+  /* font-variation-settings: "MONO" 0, "CASL" 1, "wght" 800, "slnt" -15, "ital" 1; */
+  font-variation-settings: "MONO" 0, "CASL" 0, "wght" 450, "slnt" 0, "ital" 0;
+  color: var(--baseColor);
+}
+
+h2 {
+  font-variation-settings: "MONO" 0, "CASL" 1, "wght" 800, "slnt" -15, "ital" 1;
+  color: var(--baseColor);
+}
+
+a,
+p {
+  font-family: "recursive-subset", "Recursive", sans-serif;
+  font-variation-settings: "PROP" 0, "XPRN" 0, "wght" 400, "slnt" 0, "ital" 0;
+  color: var(--baseColor);
+}
+
+p {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+img,
+video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+#nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  /* padding: 0 1rem; */
+  padding: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  background: #f1bda5;
+  color: white;
+  font-size: 1.6rem;
+  transition: 0.5s all ease;
+  z-index: 5;
+  padding: 0.75rem 1rem;
+}
+
+header a {
+  color: #32325d;
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+header a:hover {
+  font-variation-settings: "XPRN" 1;
+  font-weight: 800;
+}
+
+#title {
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  font-variation-settings: "MONO" 0, "CASL" 1, "wght" 800, "slnt" -15, "ital" 1;
+}
+
+#navigation {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#scrollinfo {
+  height: 0.25rem;
+  background: var(--baseColor);
+  width: 100vw;
+  transform: translate(calc(-100% + var(--scrollRatio) * 100%), 0);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+main {
+  display: grid;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.the_container {
+  /* height: calc(100vh - 18px); */
+  height: 100vh;
+  /* overflow: scroll; */
+  /* scroll-behavior: smooth; */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  perspective: 2px;
+  width: 100vw;
+}
+
+/* Inspiration from the CSS-Tricks article: The Slideout Footer */
+/* Link: https://css-tricks.com/the-slideout-footer/ */
+footer {
+  /* place on the bottom */
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background: var(--baseColor);
+  display: grid;
+  place-items: center;
+  padding: 50px;
+}
+
+footer h2 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+section {
+  /* height: calc(100vh - 18px); */
+  height: 100vh;
+  min-height: 100vh;
+  scroll-snap-align: center;
+}
+
+.section-header {
+  margin: 0 auto;
+  padding: 6rem 1rem 1rem;
+  max-width: 1400px;
+}
+
+.wrapper {
+}
+/*-----------------------------------*/
+
+/*------------ Section 1 ------------*/
+#section_1 {
+  background: var(--colorTwo);
+  background: var(--colorSeven);
+}
+
+#section_1 .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.welcome {
+  font-family: "recursive-subset", "Recursive", sans-serif;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: auto;
+  animation-delay: 2.5s;
+  animation: welcome 5s infinite;
+  transition: 0.25s;
+  max-width: none;
+  transition-delay: 250ms;
+}
+
+@keyframes welcome {
+  0% {
+    font-variation-settings: "MONO" 0, "CASL" 0, "wght" 450, "slnt" 0, "ital" 0;
+  }
+
+  50% {
+    /* font-variation-settings: "PROP" 0, "XPRN" 1, "wght" 800, "slnt"-15, "ital" 0; */
+    font-variation-settings: "MONO" 0, "CASL" 1, "wght" 800, "slnt" -15, "ital" 0;
+  }
+
+  100% {
+    font-variation-settings: "MONO" 0, "CASL" 0, "wght" 450, "slnt" 0, "ital" 0;
+  }
+}
+
+/*-----------------------------------*/
+
+/*------------ Section 2 ------------*/
+#section_2 {
+  background-color: var(--colorSix);
+}
+
+#section_2 h2 {
+  color: var(--baseColor);
+}
+
+.full {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--colorSix);
+}
+
+.grid-container {
+  display: grid;
+  min-height: 20vh;
+  place-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px 59px;
+}
+
+.carousel-wrapper {
+  /* margin-left: 1rem; */
+  margin: 0 auto;
+}
+
+.carousel {
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-behavior: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  white-space: nowrap;
+  padding: 10vh 0;
+  width: auto;
+
+  /*  webkit-overflow-scrolling:for safari */
+  -webkit-overflow-scrolling: auto;
+  -webkit-overflow-scrolling: touch;
+
+  /*
+  - Scrollbar-width:
+  - Removes Scrollbar. Only for Firefox
+  - Link: https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width
+  */
+
+  overflow-scrolling: auto;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  width: 0;
+}
+
+.product-card {
+  text-align: center;
+  background: var(--whiteColor);
+  padding: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-row-gap: 1rem;
+  position: relative;
+  box-shadow: none;
+  transition: transform 300ms ease-in-out, box-shadow 400ms ease, background 100ms ease;
+}
+
+.is-visible .product-card:hover,
+.is-visible .product-card:focus-within {
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.5rem);
+  cursor: pointer;
+}
+
+.carousel .product-card {
+  width: 250px;
+}
+
+.carousel .billede_side {
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: 350px;
+}
+
+.product-name {
+  text-transform: capitalize;
+  padding: 0 0 1rem;
+}
+
+/*-----------------------------------*/
+
+/*------------ Section 3 ------------*/
+
+#section_3 {
+  background: var(--colorFour);
+}
+
+.scroll-container {
+  width: 70vw;
+  height: 70vh;
+  max-height: 30rem;
+  margin: 3rem auto;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  max-width: 800px;
+  margin: 3rem auto 1rem;
+}
+
+.snap-two {
+  height: 100%;
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  background: var(--colorThree);
+}
+
+.snap-two:nth-child(2n) {
+  background: var(--colorSeven);
+}
+.snap-two:nth-child(3n) {
+  background: var(--baseColor);
+}
+
+.inside {
+  text-align: center;
+  padding: 0;
+}
+
+/*-----------------------------------*/
+
+/*------------ Section 4 ------------*/
+
+#section_4 {
+  background: var(--colorThree);
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 59px);
+}
+
+.arrow a {
+  text-decoration: none;
+  font-family: "Recursive", Helvetica, sans-serif;
+  font-variation-settings: "MONO" 0, "CASL" 1, "wght" 600, "slnt" -1, "ital" 0;
+  font-size: calc(2rem + 10vw);
+  padding-bottom: 59px;
+}
+
+/*-----------------------------------*/
+
+/*------------ Section 5 ------------*/
+#section_5 {
+  background: var(--colorSeven);
+}
+
+/*------------ Animation ------------*/
+
+.content > * {
+  opacity: 0;
+  animation-delay: 800ms;
+  transform: translate3d(0, 5rem, 0);
+  transition: opacity 800ms, transform 800ms cubic-bezier(0.13, 0.07, 0.26, 0.99);
+}
+
+/* .content:not(:first-child) > * {
+  animation-delay: 800ms;
+} */
+
+.is-visible .content > * {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.fadein {
+  animation: fadeIn 2.5s ease-in-out both;
+}
+
+#section_1 .content > * {
+  transform: translate3d(0, 0rem, 0);
+  animation-delay: 0.75s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*-----------------------------------*/
+
+/*---------- Media Queries ----------*/
+@media only screen and (min-width: 450px) {
+  .welcome {
+    font-size: 4.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  /* .grid-container {
+    padding-right: 1rem;
+  } */
+
+  .welcome {
+    font-size: calc(5rem + 4vw);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .auto-grid {
+    grid-gap: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  #nav-wrapper {
+    padding: 0 1rem;
+  }
+}
